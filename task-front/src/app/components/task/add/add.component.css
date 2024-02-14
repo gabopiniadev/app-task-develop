@@ -1,0 +1,31 @@
+.add-task {
+  padding: 10px 12px 0 12px;
+  margin: 6rem 25rem 0 25rem;;
+}
+
+.header {
+  background: #f3f5fa;
+  h1 {
+    padding: 20px 12px 20px 12px;
+    margin-left: 5rem;
+  }
+}
+
+.btn-saving {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}

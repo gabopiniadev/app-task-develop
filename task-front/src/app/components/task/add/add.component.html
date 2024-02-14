@@ -1,0 +1,41 @@
+<div class="overlay" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="header">
+  <h1>Add Task</h1>
+</div>
+
+<div class="add-task">
+  <div class="content">
+    <form [formGroup]="taskForms" (submit)="addTask()">
+      <mat-form-field>
+        <mat-label>Title Task</mat-label>
+        <input matInput placeholder="Title Task" formControlName="titleTask">
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Type Task</mat-label>
+        <mat-select formControlName="typeTask">
+          <mat-option *ngFor="let n of typeOption" [value]="n.type">{{ n.type }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date Task</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateTask">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Description Task</mat-label>
+        <textarea matInput placeholder="Description Task" formControlName="descriptionTask"></textarea>
+      </mat-form-field>
+
+      <button class="btn btn-saving" type="submit" mat-raised-button color="primary">Save</button>
+
+    </form>
+  </div>
+</div>
+
